@@ -2,10 +2,10 @@ import React from 'react';
 import { Button, SectionList, StyleSheet, Text, View } from 'react-native';
 
 export default class App extends React.Component {
-  scrollToSection = () => {
+  scrollToSection = (x) => {
     this.sectionListRef.scrollToLocation({
       animated: true,
-      sectionIndex: 2,
+      sectionIndex: x,
       itemIndex: 0,
       viewPosition: 0
     });
@@ -13,24 +13,23 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
-        <Button
-          onPress={this.scrollToSection}
-          title="Scroll"
-          color="#841584"
-          accessibilityLabel="Learn more about this purple button"
-        />
+        <View style={styles.buttonWrapper}>
+          <Button onPress={() => this.scrollToSection(0)} title="A" color="#841584" />
+          <Button onPress={() => this.scrollToSection(1)} title="B" color="#158484" />
+          <Button onPress={() => this.scrollToSection(2)} title="C" color="#848415" />
+          <Button onPress={() => this.scrollToSection(3)} title="D" color="#DD3300" />
+          <Button onPress={() => this.scrollToSection(4)} title="E" color="#33DD00" />
+          <Button onPress={() => this.scrollToSection(5)} title="F" color="#DD0033" />
+        </View>
         <SectionList
-          ref={ref => (this.sectionListRef = ref)}
+          ref={(ref) => (this.sectionListRef = ref)}
           renderItem={({ item, index, section }) => <Text key={index}>{item}</Text>}
           renderSectionHeader={({ section: { title } }) => (
             <Text style={{ fontWeight: 'bold' }}>{title}</Text>
           )}
           sections={[
             {
-              title: 'Title1',
+              title: 'A',
               data: [
                 'item1',
                 'item2',
@@ -49,7 +48,7 @@ export default class App extends React.Component {
               ]
             },
             {
-              title: 'Title2',
+              title: 'B',
               data: [
                 'item3',
                 'item4',
@@ -69,7 +68,90 @@ export default class App extends React.Component {
                 'item4'
               ]
             },
-            { title: 'Title3', data: ['item5', 'item6'] }
+            {
+              title: 'C',
+              data: [
+                'item5',
+                'item6',
+                'item3',
+                'item4',
+                'item3',
+                'item4',
+                'item3',
+                'item4',
+                'item3',
+                'item4',
+                'item3',
+                'item4',
+                'item3',
+                'item4',
+                'item3',
+                'item4'
+              ]
+            },
+            {
+              title: 'D',
+              data: [
+                'item5',
+                'item6',
+                'item3',
+                'item4',
+                'item3',
+                'item4',
+                'item3',
+                'item4',
+                'item3',
+                'item4',
+                'item3',
+                'item4',
+                'item3',
+                'item4',
+                'item3',
+                'item4'
+              ]
+            },
+            {
+              title: 'E',
+              data: [
+                'item5',
+                'item6',
+                'item3',
+                'item4',
+                'item3',
+                'item4',
+                'item3',
+                'item4',
+                'item3',
+                'item4',
+                'item3',
+                'item4',
+                'item3',
+                'item4',
+                'item3',
+                'item4'
+              ]
+            },
+            {
+              title: 'F',
+              data: [
+                'item5',
+                'item6',
+                'item3',
+                'item4',
+                'item3',
+                'item4',
+                'item3',
+                'item4',
+                'item3',
+                'item4',
+                'item3',
+                'item4',
+                'item3',
+                'item4',
+                'item3',
+                'item4'
+              ]
+            }
           ]}
           keyExtractor={(item, index) => item + index}
         />
@@ -82,5 +164,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 50
+  },
+  buttonWrapper: {
+    flexDirection: 'row'
   }
 });
