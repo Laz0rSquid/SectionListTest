@@ -1,0 +1,6 @@
+SectionList (native implementation) https://facebook.github.io/react-native/docs/sectionlist.html
+scrollTo(params) for SectionList https://facebook.github.io/react-native/docs/sectionlist.html#scrolltolocation
+
+react-native-largelist https://github.com/bolan9999/react-native-largelist
+setup https://github.com/bolan9999/react-native-largelist#getting-started
+scrollTo(indexPath) https://github.com/bolan9999/react-native-largelist#scrolltoindexpathindexpathindexpath-animatedboolean--true
